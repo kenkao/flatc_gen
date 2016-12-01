@@ -53,6 +53,7 @@ func WalkDir(dirPth, suffix string) (files []string, err error) {
 
 func main() {
 
+	os.Remove("flatc_gen.cmd")
 	flog, err := os.OpenFile("flatc_gen.cmd", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0600)
 	if err != nil {
 		os.Exit(1)
